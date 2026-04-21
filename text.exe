@@ -1,0 +1,97 @@
+using System;
+using System.Collections.Generic;
+
+namespace Prueba
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            // -------- SUPERHEROE --------
+            Console.Write("Nombre del superhéroe: ");
+            string nombre = Console.ReadLine();
+
+            Console.Write("Descripción: ");
+            string descripcion = Console.ReadLine();
+
+            Console.Write("¿Tiene capa? (true/false): ");
+            bool capa = bool.Parse(Console.ReadLine());
+
+            Console.WriteLine("\n--- SUPERHEROE ---");
+            Console.WriteLine("Nombre: " + nombre);
+            Console.WriteLine("Descripción: " + descripcion);
+            Console.WriteLine("Capa: " + capa);
+            Console.ReadKey();
+
+            // -------- DIMENSION --------
+            Console.Clear();
+
+            Console.Write("Altura: ");
+            double altura = double.Parse(Console.ReadLine());
+
+            Console.Write("Ancho: ");
+            double ancho = double.Parse(Console.ReadLine());
+
+            Console.Write("Profundidad: ");
+            double profundidad = double.Parse(Console.ReadLine());
+
+            double volumen = altura * ancho * profundidad;
+
+            Console.WriteLine("\n--- DIMENSION ---");
+            Console.WriteLine("Volumen: " + volumen);
+            Console.ReadKey();
+
+            // -------- FIGURA --------
+            Console.Clear();
+
+            Console.Write("Código de la figura: ");
+            string codigo = Console.ReadLine();
+
+            Console.Write("Precio: ");
+            double precio = double.Parse(Console.ReadLine());
+
+            Console.Write("¿Cuánto querés aumentar el precio?: ");
+            double aumento = double.Parse(Console.ReadLine());
+
+            precio = precio + aumento;
+
+            Console.WriteLine("\n--- FIGURA ---");
+            Console.WriteLine("Código: " + codigo);
+            Console.WriteLine("Precio actualizado: " + precio);
+            Console.ReadKey();
+
+            // -------- COLECCION --------
+            Console.Clear();
+
+            List<double> precios = new List<double>();
+
+            Console.Write("¿Cuántas figuras querés cargar?: ");
+            int cantidad = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < cantidad; i++)
+            {
+                Console.Write("Precio de figura " + (i + 1) + ": ");
+                double p = double.Parse(Console.ReadLine());
+                precios.Add(p);
+            }
+
+            double total = 0;
+            double mayor = 0;
+
+            foreach (double p in precios)
+            {
+                total = total + p;
+
+                if (p > mayor)
+                {
+                    mayor = p;
+                }
+            }
+
+            Console.WriteLine("\n--- COLECCION ---");
+            Console.WriteLine("Valor total: " + total);
+            Console.WriteLine("Figura más cara: " + mayor);
+            Console.ReadKey();
+        }
+    }
+}
